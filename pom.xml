@@ -10,6 +10,8 @@
     <version>1.0.0</version>
     <modules>
         <module>learn-opencv</module>
+        <module>learn-akka</module>
+        <module>learn-netty</module>
     </modules>
 
     <dependencies>
