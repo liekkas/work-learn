@@ -12,6 +12,7 @@
         <module>learn-opencv</module>
         <module>learn-akka</module>
         <module>learn-netty</module>
+        <module>learn-nosql</module>
     </modules>
 
     <dependencies>
