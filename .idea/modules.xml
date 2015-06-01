@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/learn-opencv/javacv/javacv.iml" filepath="$PROJECT_DIR$/learn-opencv/javacv/javacv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-akka/learn-akka.iml" filepath="$PROJECT_DIR$/learn-akka/learn-akka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-netty/learn-netty.iml" filepath="$PROJECT_DIR$/learn-netty/learn-netty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-nosql/learn-nosql.iml" filepath="$PROJECT_DIR$/learn-nosql/learn-nosql.iml" />
       <module fileurl="file://$PROJECT_DIR$/learn-opencv/learn-opencv.iml" filepath="$PROJECT_DIR$/learn-opencv/learn-opencv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-nosql/learn-redis/learn-redis.iml" filepath="$PROJECT_DIR$/learn-nosql/learn-redis/learn-redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/learn-opencv/opencv2/opencv2.iml" filepath="$PROJECT_DIR$/learn-opencv/opencv2/opencv2.iml" />
       <module fileurl="file://$PROJECT_DIR$/learn-opencv/opencv3/opencv3.iml" filepath="$PROJECT_DIR$/learn-opencv/opencv3/opencv3.iml" />
       <module fileurl="file://$PROJECT_DIR$/work-learn.iml" filepath="$PROJECT_DIR$/work-learn.iml" />
