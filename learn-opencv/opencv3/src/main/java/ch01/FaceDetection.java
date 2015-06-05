@@ -22,7 +22,7 @@ public class FaceDetection extends BaseCV{
 
     public static void main(String[] args) {
         //照片源
-        Mat image = imread(FaceDetection.class.getResource("/images/m1.jpg").getPath());
+        Mat image = imread(FaceDetection.class.getResource("/images/c.png").getPath());
 
         //灰度化
         Mat grayImage = new Mat();
@@ -34,7 +34,7 @@ public class FaceDetection extends BaseCV{
 
         //正脸检测
         CascadeClassifier faceCC = new CascadeClassifier(
-                FaceDetection.class.getResource("/cascades/haarcascades/haarcascade_frontalface_alt.xml").getPath());
+                FaceDetection.class.getResource("/cascades/haarcascades/haarcascade_profileface.xml").getPath());
         MatOfRect faceMor = new MatOfRect();
         faceCC.detectMultiScale(useImage, faceMor);
         for (Rect rect : faceMor.toArray()) {
@@ -48,7 +48,7 @@ public class FaceDetection extends BaseCV{
 
         //眼睛检测
         CascadeClassifier eyeCC = new CascadeClassifier(
-                FaceDetection.class.getResource("/cascades/haarcascades/haarcascade_eye.xml").getPath());
+                FaceDetection.class.getResource("/cascades/haarcascades/haarcascade_lefteye_2splits.xml").getPath());
         MatOfRect eyeMor = new MatOfRect();
         eyeCC.detectMultiScale(useImage,eyeMor);
         for (Rect rect : eyeMor.toArray()) {

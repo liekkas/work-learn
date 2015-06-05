@@ -43,7 +43,7 @@ import static org.opencv.imgproc.Imgproc.*;
 public class CannyDetection extends BaseCV {
 
     public static void main(String[] args) {
-        Mat srcImage = imread(ImageBlur.class.getResource("/images/m1.jpg").getPath());
+        Mat srcImage = imread(ImageBlur.class.getResource("/images/z4.jpg").getPath());
         Mat dstImage = new Mat();
         Mat edge = new Mat();
         Mat grayImage = new Mat();
@@ -51,13 +51,11 @@ public class CannyDetection extends BaseCV {
         //创建和src相同大小的矩阵
         dstImage.create(srcImage.size(),srcImage.type());
 
-        //灰度化原图
-        cvtColor(srcImage,grayImage,COLOR_BGR2GRAY);
+        resize(srcImage, edge, new Size(360, 480)); //原图缩小到指定尺寸
+//        cvtColor(edge, edge, COLOR_BGR2GRAY);
 
-        blur(grayImage, edge, new Size(3, 3));
-
-        Canny(edge, edge, 3, 9.3);
-
+        Canny(edge, edge, 50, 200, 3, true);
+//        HoughLinesP(edge,edge,1,0.3,50,40,10);
         Imgshow imgshow = new Imgshow("灰度检测");
         imgshow.showImage(edge);
     }
