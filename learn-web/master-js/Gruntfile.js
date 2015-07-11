@@ -24,7 +24,7 @@ module.exports = function(grunt){
                 options:{
                     framework:'jasmine2',
                     launch_in_dev:['PhantomJS'],
-                    before_tests:'grunt jshint',
+                    //before_tests:'grunt jshint',
                     serve_files:[
                         curChapter+'/src/**/*.js',
                         curChapter+'/test/**/*.js',
@@ -41,7 +41,7 @@ module.exports = function(grunt){
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-jshint');
+    //grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-testem');
 
     grunt.registerTask('default',['testem:run:unit']);
