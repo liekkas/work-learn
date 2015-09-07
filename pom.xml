@@ -13,6 +13,13 @@
         <module>learn-akka</module>
         <module>learn-netty</module>
         <module>learn-nosql</module>
+        <module>learn-utils</module>
+        <module>learn-gis</module>
+        <module>learn-concurrency</module>
+        <module>learn-serialrpc</module>
+        <module>learn-network</module>
+        <module>learn-spring</module>
+        <module>learn-rdbms</module>
     </modules>
 
     <dependencies>

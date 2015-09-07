@@ -23,10 +23,9 @@ public class Main {
     private static Jedis jedis;
 
     public static void main(String[] args) {
-        jedis = JedisUtil.getInstance().getJedis("lab",6379);
-//        Hello();
-        testSetUsage();
 
+        jedis = JedisUtil.getInstance().getJedis("gs",6379);
+        Hello();
     }
 
     public static void Hello() {
@@ -53,6 +52,9 @@ public class Main {
          */
         jedis.mset("name", "minxr", "jarorwar", "aaa");
         System.out.println(jedis.mget("name", "jarorwar"));
+
+        // 清空数据
+        System.out.println("CLEAR："+jedis.flushDB());
     }
 
     private static void testKey() {
@@ -68,10 +70,10 @@ public class Main {
 
     public static void testString() {
         System.out.println("==String==");
-            // String
-            jedis.set("key", "Hello World!");
-            String value = jedis.get("key");
-            System.out.println(value);
+        // String
+        jedis.set("key", "Hello World!");
+        String value = jedis.get("key");
+        System.out.println(value);
 
         System.out.println("=============String==========================");
         // 清空数据
@@ -104,7 +106,10 @@ public class Main {
         System.out.println(jedis.mset("mset1", "mvalue1", "mset2", "mvalue2",
                 "mset3", "mvalue3", "mset4", "mvalue4"));
         System.out.println(jedis.mget("mset1", "mset2", "mset3", "mset4"));
-        System.out.println(jedis.del(new String[] { "foo", "foo1", "foo3" }));
+        System.out.println(jedis.del(new String[]{"foo", "foo1", "foo3"}));
+
+        // 清空数据
+        System.out.println("CLEAR："+jedis.flushDB());
     }
 //
     public static void testList() {

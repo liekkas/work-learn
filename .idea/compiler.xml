@@ -24,8 +24,10 @@
         <processorPath useClasspath="true" />
         <module name="javacv" />
         <module name="learn-akka" />
+        <module name="learn-gis" />
         <module name="learn-netty" />
         <module name="learn-redis" />
+        <module name="learn-utils" />
         <module name="opencv2" />
         <module name="opencv3" />
       </profile>
@@ -33,10 +35,12 @@
     <bytecodeTargetLevel>
       <module name="javacv" target="1.5" />
       <module name="learn-akka" target="1.5" />
+      <module name="learn-gis" target="1.5" />
       <module name="learn-netty" target="1.5" />
       <module name="learn-nosql" target="1.5" />
       <module name="learn-opencv" target="1.5" />
       <module name="learn-redis" target="1.5" />
+      <module name="learn-utils" target="1.5" />
       <module name="opencv2" target="1.5" />
       <module name="opencv3" target="1.5" />
       <module name="work-learn" target="1.5" />
