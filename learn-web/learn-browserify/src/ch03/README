@@ -1,0 +1,49 @@
+Browserify 扩展了 package.json 并提供了额外的配置项。
+可以通过 package.json 的“browser”属性指定在浏览器环境中的入口文件。
+NodeJS 的 package.json 中通过“main”属性来指定入口文件。通过添加新的“browser”属性，
+使得模块可以兼容 NodeJS 和浏览器两个不同的环境。
+
+一个 package.json 文件的示例。
+{
+ "name": "sample",
+ "version": "1.0.0",
+ "main": "main.js",
+ "browser": "browser.js"
+}
+
+当通过 require('sample')来加载 sample 模块时，如果当前是 NodeJS 环境，则使用的是 main.js 提供的接口；
+如果是浏览器环境，则使用的是 browser.js 提供的接口。
+在有些情况下，NodeJS 和浏览器环境下运行的代码的差别并不大。因此不需要分别指定不同的入口文件，而只需要替换某些模块的实现即可。
+可以通过“browser”属性来指定要替换的文件，如下所示。
+{
+ "name": "sample",
+ "version": "1.0.0",
+ "main": "main.js",
+ "browser": {
+	"demo.js": "browser-demo.js"
+ }
+}
+在浏览器环境下，当需要加载模块 demo.js 时，会被替换成加载 browser-demo.js 文件。
+
+在另外的一些情况下，某些模块仅在 NodeJS 环境中有效，而在浏览器中是不需要的。此时可以选择在浏览器环境中忽略该模块。
+在如下所示 中模块 example 被忽略。当加载 example 模块时，其内容会变成一个空的对象。
+{
+ "name": "sample",
+ "version": "1.0.0",
+ "main": "main.js",
+ "browser": {
+	"example": false
+ }
+}
+
+对于变换处理，除了使用“-t”参数在执行 browserify 命令时指定之外，也可以在 package.json 中声明。
+如下所示。当模块被加载时，通过 browerify.transform 声明的变换处理会被自动调用。
+{
+ "name": "sample",
+ "version": "1.0.0",
+ "main": "main.js",
+ "browserify": {
+	"transform": [ "./properties.js" ]
+ }
+}
+所有这些通过 browser 和 browerify.transform 属性所做的对于模块的修改和替换，都只对 package.json 所在的当前模块有效。

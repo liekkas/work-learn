@@ -1,0 +1,16 @@
+
+ch01：初试browserify
+ch02：browserify中的transform
+ch03：扩展package.json
+ch04：告别手动输命令，以gulp任务方式进行
+ch03：browserify-shim来转换非CommonJS模块
+
+
+
+
+
+参考文档：
+https://github.com/substack/browserify-handbook#introduction
+http://www.ibm.com/developerworks/cn/web/1501_chengfu_browserify/
+http://segmentfault.com/a/1190000002941361
+https://github.com/substack/node-browserify#usage

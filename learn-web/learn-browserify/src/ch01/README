@@ -1,0 +1,6 @@
+说明：broswerify会分析依赖包，然后把所有的依赖都打包到一个文件。
+	如果main.js中引用了lodash，main.js中又引用了自定义的utils，utils中又引用了lodash，最后browserify只会
+	打包一份lodash.
+
+命令：browserify ./main.js -o ./bundle.js
+

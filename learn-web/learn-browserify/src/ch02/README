@@ -1,0 +1,15 @@
+说明：Browserify 支持在对模块的 JavaScript 文件进行合并之前进行变换处理。
+	比如把 CoffeeScript 文件转换成 JavaScript 文件，或是使用正则表达式替换掉 JavaScript 文件中的某些内容。
+	变换过程使用的是 NodeJS 中的流处理。把输入文件当成一个流，在该流上进行处理，处理之后的结果交由 Browserify 使用。
+	可以同时进行多次变换处理，其效果相当于使用 Linux 操作系统上的管道操作。前一个变换处理的输出是下一个变换处理的输入。
+
+     比如变换处理模块 coffeeify 可以把 CoffeeScript 编译成 JavaScript。在运行 browserify 命令时通过“-t”参数来指定
+     需要使用的变换，如“browserify -t coffeeify main.coffee > bundle.js”命令先通过 coffeeify 变换进行编译，
+     再把依赖的模块打包。打包时的输入是 coffeeify 变换的输出。
+
+    除了社区中已有的变换处理模块之外，也可以开发自己的变换处理模块。本节就是一个例子，
+    给出了一个对 JavaScript 文件中的属性值进行替换的变换处理模块 properties.js。该模块只提供一个方法用来对文件进行处理，
+    返回值是一个对文件内容进行变换的流。在实际的处理中通过正则表达式来查找文件中出现的“${}”模式，并替换成 config.js
+    中定义的对应属性值。
+
+命令：browserify -t ./properties.js sample.js > bundle.js
